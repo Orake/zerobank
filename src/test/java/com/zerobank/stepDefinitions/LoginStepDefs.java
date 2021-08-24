@@ -45,7 +45,7 @@ public class LoginStepDefs {
     public void theUserEntersTheInvalidInformation() {
 
         LoginPage loginPage= new LoginPage();
-        loginPage.invalidLogin("abcdefgh","12345678");
+        loginPage.invalidLogin("Ozzy","Jamal123");
 
     }
 
@@ -53,7 +53,7 @@ public class LoginStepDefs {
     public void theUserShouldBeAbleToSeeTheErrorMessageLogin() {
 
         LoginPage loginPage = new LoginPage();
-        System.out.println(loginPage.ErrorMessage.getText());
+       System.out.println(loginPage.ErrorMessage.getText());
         Assert.assertTrue(loginPage.ErrorMessage.isDisplayed());
 
 

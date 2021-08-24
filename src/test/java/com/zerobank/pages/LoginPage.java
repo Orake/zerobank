@@ -6,12 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class LoginPage extends BasePage{
 
-    public LoginPage(){
 
-        PageFactory.initElements(Driver.get(),this);
-    }
 
     @FindBy(id ="user_login")
     public WebElement username;

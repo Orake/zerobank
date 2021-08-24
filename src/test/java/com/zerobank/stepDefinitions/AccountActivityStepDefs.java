@@ -2,6 +2,7 @@ package com.zerobank.stepDefinitions;
 
 import com.zerobank.pages.LoginPage;
 import com.zerobank.pages.Zero_AccountActivity;
+import com.zerobank.utilities.BrowserUtils;
 import com.zerobank.utilities.ConfigurationReader;
 import com.zerobank.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -35,17 +36,16 @@ public class AccountActivityStepDefs {
         Assert.assertEquals(actual, expected);
 
 
-
     }
 
-    @And("Account drop down should have {string} selected")
-    public void accountDropDownShouldHaveSavingsSelected(String str1) {
-        Zero_AccountActivity dropdown = new Zero_AccountActivity();
-        dropdown.dropdowns(str1);
 
-        String actual = Driver.get().getTitle();
-        String expected = "Brokerage";
-        Assert.assertEquals(actual, expected);
+   @And("Account drop down should have {string} selected")
+    public void accountDropDownShouldHaveSelected(String expected) {
+       BrowserUtils.waitFor(2);
+        Zero_AccountActivity zeroAccountActivity = new Zero_AccountActivity();
+       String actual = zeroAccountActivity.SelectedDropdown().getFirstSelectedOption().getText();
+       Assert.assertEquals(expected, actual);
+        
 
 
     }
