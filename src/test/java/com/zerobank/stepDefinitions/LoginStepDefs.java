@@ -38,7 +38,6 @@ public class LoginStepDefs {
          String expectedTitle= "Zero - Account Summary";
         Assert.assertEquals(actualTitle,expectedTitle);
 
-
     }
 
     @When("the user enters the invalid information")
