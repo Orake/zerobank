@@ -1,6 +1,7 @@
 package com.zerobank.stepDefinitions;
 
 import com.zerobank.pages.NewPayeePage;
+import com.zerobank.utilities.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -18,9 +19,17 @@ public class NewPayeeStepDef {
 
     @And("creates new payee using following information")
     public void createsNewPayeeUsingFollowingInformation(Map<String,String> NewPayeeInfo) {
-        new NewPayeePage().createNewPayee(NewPayeeInfo.get("Payee Name"),
-                NewPayeeInfo.get("Payee Address"),NewPayeeInfo.get("Account"),
-                NewPayeeInfo.get("Payee details"));
+        BrowserUtils.waitFor(1);
+       NewPayeePage newPayeePage = new NewPayeePage();
+
+
+
+        newPayeePage.PayeeNameBox.sendKeys(NewPayeeInfo.get("Payee Name"));
+        newPayeePage.PayeeAddressBox.sendKeys(NewPayeeInfo.get("Payee Address"));
+        newPayeePage.AccountBox.sendKeys(NewPayeeInfo.get("Account"));
+        newPayeePage.PayeeDetailsBox.sendKeys(NewPayeeInfo.get("Payee details"));
+
+        newPayeePage.AddButton.click();
 
     }
 

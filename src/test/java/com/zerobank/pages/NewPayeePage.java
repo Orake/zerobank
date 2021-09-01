@@ -36,14 +36,6 @@ public class NewPayeePage extends BasePage {
         AddNewPayeeTab.click();
 
     }
-    public void createNewPayee(String name, String address, String account, String details){
-        BrowserUtils.waitForPageToLoad(1);
-        PayeeNameBox.sendKeys(name);
-        PayeeAddressBox.sendKeys(address);
-        AccountBox.sendKeys(account);
-        PayeeDetailsBox.sendKeys(details);
-        AddButton.click();
 
-    }
 
 }
