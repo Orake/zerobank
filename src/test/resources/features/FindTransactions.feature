@@ -1,3 +1,4 @@
+
 @smoke
 Feature: Find Transactions in Account Activity
 
@@ -37,7 +38,6 @@ Feature: Find Transactions in Account Activity
     And clicks search
     Then results table should not show descriptions containing "ONLINE"
 
-    @wip
   Scenario: Type
     And clicks search
     Then results table should show at least one result under Deposit

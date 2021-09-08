@@ -1,6 +1,6 @@
 package com.zerobank.stepDefinitions;
 
-import com.zerobank.pages.NewPayeePage;
+import com.zerobank.pages.Zero_PayBills;
 import com.zerobank.utilities.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -12,7 +12,7 @@ import java.util.Map;
 public class NewPayeeStepDef {
     @Given("Add new payee tab")
     public void addNewPayeeTab() {
-        NewPayeePage newPayeePage = new NewPayeePage();
+        Zero_PayBills newPayeePage = new Zero_PayBills();
         newPayeePage.AddNewPayeeTab();
 
     }
@@ -20,7 +20,7 @@ public class NewPayeeStepDef {
     @And("creates new payee using following information")
     public void createsNewPayeeUsingFollowingInformation(Map<String,String> NewPayeeInfo) {
         BrowserUtils.waitFor(1);
-       NewPayeePage newPayeePage = new NewPayeePage();
+        Zero_PayBills newPayeePage = new Zero_PayBills();
 
 
 
@@ -35,7 +35,7 @@ public class NewPayeeStepDef {
 
     @Then("message {string} should be displayed")
     public void messageShouldBeDisplayed(String message) {
-        NewPayeePage newPayeePage = new NewPayeePage();
+        Zero_PayBills newPayeePage = new Zero_PayBills();
         //System.out.println(message);
         //System.out.println(newPayeePage.SuccessMessage.getText());
         Assert.assertEquals(message,newPayeePage.SuccessMessage.getText() );

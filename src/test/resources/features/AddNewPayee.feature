@@ -1,3 +1,5 @@
+
+@smoke
 Feature: Add new payee under pay bills
 
   Background:
